@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="lib" path="lib/sc-light-jdk15on-1.47.0.2.jar" sourcepath="lib/sc-light-jdk15on-1.47.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/be.boeboe.spongycastle/lib/sc-light-jdk15on-1.47.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/scpkix-jdk15on-1.47.0.2.jar" sourcepath="lib/scpkix-jdk15on-1.47.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/be.boeboe.spongycastle/lib/scpkix-jdk15on-1.47.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="lib/scprov-jdk15on-1.47.0.2.jar" sourcepath="lib/scprov-jdk15on-1.47.0.2-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/be.boeboe.spongycastle/lib/scprov-jdk15on-1.47.0.2-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
