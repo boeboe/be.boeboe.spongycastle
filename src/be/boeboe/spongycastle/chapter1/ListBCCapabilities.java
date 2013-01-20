@@ -1,8 +1,8 @@
 package be.boeboe.spongycastle.chapter1;
+
 import java.security.Provider;
 import java.security.Security;
 import java.util.Iterator;
-
 import org.spongycastle.jce.provider.BouncyCastleProvider;
 
 /**
