@@ -1,10 +1,16 @@
 package be.boeboe.spongycastle.chapter6;
 
 import java.math.BigInteger;
-import java.security.*;
+import java.security.InvalidKeyException;
+import java.security.KeyPair;
+import java.security.NoSuchProviderException;
+import java.security.Security;
+import java.security.SignatureException;
 import java.security.cert.X509Certificate;
 import java.util.Date;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.spongycastle.asn1.x509.BasicConstraints;
 import org.spongycastle.asn1.x509.ExtendedKeyUsage;
 import org.spongycastle.asn1.x509.GeneralName;
@@ -18,6 +24,7 @@ import org.spongycastle.x509.X509V3CertificateGenerator;
 /**
  * Basic X.509 V3 Certificate creation with TLS flagging.
  */
+@SuppressWarnings("deprecation")
 public class X509V3CreateExample {
   static {
     BouncyCastleProvider prov = new org.spongycastle.jce.provider.BouncyCastleProvider();

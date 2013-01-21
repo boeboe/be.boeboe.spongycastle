@@ -1,16 +1,23 @@
 package be.boeboe.spongycastle.chapter6;
 
 import java.math.BigInteger;
-import java.security.*;
+import java.security.InvalidKeyException;
+import java.security.KeyPair;
+import java.security.NoSuchProviderException;
+import java.security.Security;
+import java.security.SignatureException;
 import java.security.cert.X509Certificate;
 import java.util.Date;
+
 import javax.security.auth.x500.X500Principal;
+
 import org.spongycastle.jce.provider.BouncyCastleProvider;
 import org.spongycastle.x509.X509V1CertificateGenerator;
 
 /**
  * Basic X.509 V1 Certificate creation.
  */
+@SuppressWarnings("deprecation")
 public class X509V1CreateExample {
   static {
     BouncyCastleProvider prov = new org.spongycastle.jce.provider.BouncyCastleProvider();
