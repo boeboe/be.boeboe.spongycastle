@@ -28,7 +28,7 @@ public class CertificateFactoryExample {
 
     // create the input stream
     ByteArrayOutputStream bOut = new ByteArrayOutputStream();
-    
+
     File file = new File("/tmp/cert.pem");
     FileWriter fileWriter = new FileWriter(file);
     PEMWriter pemWrt = new PEMWriter(fileWriter, "SC");

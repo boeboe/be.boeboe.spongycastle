@@ -9,7 +9,7 @@ import org.spongycastle.jce.provider.BouncyCastleProvider;
 /**
  * Chapter 6 Utils
  */
-public class Utils extends be.boeboe.spongycastle.chapter3.Utils {
+public class Utils extends be.boeboe.spongycastle.chapter4.Utils {
   static {
     BouncyCastleProvider prov = new org.spongycastle.jce.provider.BouncyCastleProvider();
     Security.addProvider(prov);
