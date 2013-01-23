@@ -38,5 +38,7 @@
 			<attribute name="javadoc_location" value="jar:platform:/resource/be.boeboe.spongycastle/lib/commons-lang-2.6-javadoc.jar!/"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="lib/slf4j-log4j12-1.7.2.jar" sourcepath="lib/slf4j-log4j12-1.7.2-sources.jar"/>
+	<classpathentry kind="lib" path="lib/slf4j-ext-1.7.2.jar" sourcepath="lib/slf4j-ext-1.7.2-sources.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
