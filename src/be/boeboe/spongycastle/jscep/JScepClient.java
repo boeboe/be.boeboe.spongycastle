@@ -69,15 +69,16 @@ public class JScepClient {
     PrivateKey priKey = pair.getPrivate();
     
     // URL used by the SCEP server at example.org
-    URL url = new URL("http://localhost:8443/ejbca/publicweb/apply/scep/pkiclient.exe");
+    URL url = new URL("http://127.0.0.1:8080/ejbca/publicweb/apply/scep/pkiclient.exe");
+    // URL url = new URL("http://localhost:8443/ejbca/publicweb/apply/scep/noca/pkiclient.exe");
     
     // Construct the client
     Client client = new Client(url, new ConsoleCertificateVerifier());
 
     // The certification request to send to the SCEP server
-    PKCS10CertificationRequest csr = generateCertRequest(pair);
+    PKCS10CertificationRequest certRequest = generateCertRequest(pair);
 
-    EnrollmentResponse txn = client.enrol(clientCertificate, priKey, csr);
+    EnrollmentResponse txn = client.enrol(clientCertificate, priKey, certRequest, "AdminCA1");
     
     while (txn.isPending()) {
       Thread.sleep(1000);
@@ -96,7 +97,7 @@ public class JScepClient {
   private static PKCS10CertificationRequest generateCertRequest(KeyPair pair) 
       throws OperatorCreationException, PKCSException {
     SubjectPublicKeyInfo publicKeyInfo = SubjectPublicKeyInfo.getInstance(pair.getPublic().getEncoded());
-    X500Name subject = new X500Name("CN=Requested Test Certificate");
+    X500Name subject = new X500Name("CN=Boeboe");
     PKCS10CertificationRequestBuilder certificationRequestBuilder = new PKCS10CertificationRequestBuilder(subject, publicKeyInfo);
 
     certificationRequestBuilder.addAttribute(X509Extension.keyUsage, 
@@ -125,11 +126,11 @@ public class JScepClient {
 
   private static X509Certificate generateClientCertificate(KeyPair pair) 
       throws CertificateException, NoSuchProviderException, OperatorCreationException, IOException {
-    X500Name issuer = new X500Name("CN=Qeo Self Signed Cert");
+    X500Name issuer = new X500Name("CN=Boeboe");
     BigInteger serial = BigInteger.valueOf(System.currentTimeMillis());
     Date notBefore = new Date(System.currentTimeMillis());
     Date notAfter = new Date(System.currentTimeMillis() + Long.valueOf("788400000000"));
-    X500Name subject = new X500Name("CN=Qeo Self Signed Cert");;
+    X500Name subject = new X500Name("CN=Boeboe");;
     SubjectPublicKeyInfo publicKeyInfo = SubjectPublicKeyInfo.getInstance(pair.getPublic().getEncoded());
 
     // Generate the certificate
